@@ -31,6 +31,12 @@ CREATE TABLE zona(
     PRIMARY KEY(id)
 );
 
+INSERT INTO zona (nombre) VALUES ('Norte');
+INSERT INTO zona (nombre) VALUES ('Sur');
+INSERT INTO zona (nombre) VALUES ('Este');
+INSERT INTO zona (nombre) VALUES ('Oeste');
+
+
 CREATE TABLE abonos(
     id INTEGER AUTO_INCREMENT,
     importe DOUBLE NOT NULL,
