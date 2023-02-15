@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane id="pane" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="914.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreal.ControladorBuscar">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="buscarBuscar" layoutX="95.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickBuscarBuscar" text="BuscarSocio" />
+            <ComboBox fx:id="comboBuscar" layoutX="59.0" layoutY="61.0" onAction="#comboSelectBuscar" onShowing="#showingBuscar" prefWidth="150.0" promptText="Seleccione campo" />
+            <Label layoutX="64.0" layoutY="26.0" prefHeight="18.0" prefWidth="139.0" text="Elija campo para buscar" textFill="#e7e1e1">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelBuscar" layoutX="120.0" layoutY="146.0" text="DNI" textFill="#efefef">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="campoBusqueda" layoutX="60.0" layoutY="179.0" onKeyPressed="#buscarKey" promptText="DNI" />
+            <Button fx:id="atrasBuscar" layoutX="95.0" layoutY="373.0" mnemonicParsing="false" onAction="#clickAtrasBuscar" prefHeight="25.0" prefWidth="80.0" text="Atrás" />
+         </children></AnchorPane>
+    <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="415.0">
+         <children>
+            <ListView fx:id="listaBuscar" editable="true" layoutX="34.0" layoutY="28.0" prefHeight="394.0" prefWidth="570.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

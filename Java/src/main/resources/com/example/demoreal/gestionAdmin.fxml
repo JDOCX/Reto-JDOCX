@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane id="pane" fx:id="pane" dividerPositions="0.2839628238085821" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1013.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreal.ControladorGestionAdmin">
+  <items>
+    <AnchorPane id="pane" fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@style.css">
+         <children>
+            <Button id="agregar" fx:id="addUser" layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#agregarSocio" prefHeight="58.0" prefWidth="213.0" text="Agregar Socio">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button id="editar" fx:id="editUser" layoutX="35.0" layoutY="113.0" mnemonicParsing="false" onAction="#editarSocio" prefHeight="58.0" prefWidth="214.0" text="Editar Socio">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button id="borrar" fx:id="deleteUser" layoutX="35.0" layoutY="203.0" mnemonicParsing="false" onAction="#borrarSocio" prefHeight="58.0" prefWidth="214.0" text="Borrar Socio">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button id="buscar" fx:id="busqueda" layoutX="35.0" layoutY="289.0" mnemonicParsing="false" onAction="#buscarSocio" prefHeight="58.0" prefWidth="214.0" text="Buscar Socio">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <ImageView fitHeight="215.0" fitWidth="214.0" layoutX="42.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@coding.png" />
+               </image>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ImageView>
+         </children></AnchorPane>
+    <AnchorPane id="pane" fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="637.0" prefWidth="692.0" stylesheets="@style.css">
+         <children>
+            <Label layoutX="71.0" layoutY="110.0" text="Nombre*" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="223.0" text="Apellido 1*" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="323.0" text="Apellido 2*" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="txtNombre" fx:id="txtNombre" layoutX="141.0" layoutY="106.0" />
+            <TextField id="txtApellido1" fx:id="txtApellido1" layoutX="141.0" layoutY="219.0" />
+            <TextField id="txtApellido2" fx:id="txtApellido2" layoutX="140.0" layoutY="319.0" />
+            <Label layoutX="434.0" layoutY="110.0" text="DNI*" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="337.0" layoutY="223.0" text="Fecha de Nacimiento*" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="323.0" text="Email*" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="225.0" layoutY="443.0" text="Teléfono" textFill="#ececec">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtDni" layoutX="474.0" layoutY="106.0" promptText="XXXXXXXXA" />
+            <TextField fx:id="txtFecha" layoutX="475.0" layoutY="219.0" promptText="yyyy-mm-dd" />
+            <TextField fx:id="txtEmail" layoutX="475.0" layoutY="319.0" />
+            <TextField fx:id="txtTelefono" layoutX="286.0" layoutY="439.0" />
+            <Label layoutX="211.0" layoutY="36.0" text="Pantalla de Registro de Clientes" textFill="#eceaea">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

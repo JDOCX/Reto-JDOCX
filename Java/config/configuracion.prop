@@ -1,0 +1,6 @@
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=25
+mail.smtp.user=di.piedra@aulanz.net
+mail.smtp.password=vztroebssmyezahs
+mail.smtp.starttls.enable=true
+mail.smtp.auth=true

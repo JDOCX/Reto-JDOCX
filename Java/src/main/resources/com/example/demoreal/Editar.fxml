@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreal.ControladorEditar">
+  <items>
+    <AnchorPane id="pane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@style.css">
+         <children>
+            <Button fx:id="botonBuscar" layoutX="105.0" layoutY="229.0" mnemonicParsing="false" onAction="#clickBuscar" prefHeight="26.0" prefWidth="82.0" text="BuscarSocio" />
+            <TextField fx:id="txtBuscar" layoutX="71.0" layoutY="180.0" onKeyPressed="#keyBuscarEditar" promptText="DNI" />
+            <Button fx:id="atras" layoutX="105.0" layoutY="589.0" mnemonicParsing="false" onAction="#pulsarAtras" prefHeight="25.0" prefWidth="81.0" text="Atrás" />
+            <ImageView fitHeight="178.0" fitWidth="200.0" layoutX="57.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@coding.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelEditar" layoutX="134.0" layoutY="145.0" text="DNI" textFill="#ebebeb">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="32.0" text="Elija campo para buscar" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboEditar" editable="true" layoutX="71.0" layoutY="71.0" onAction="#comoSelectEditar" onShowing="#onShowEditar" prefWidth="150.0" promptText="Seleccione un campo" />
+         </children></AnchorPane>
+    <AnchorPane id="pane" fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="627.0" prefWidth="417.0" stylesheets="@style.css">
+         <children>
+            <Label layoutX="71.0" layoutY="47.0" text="Nombre :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="111.0" text="Primer Apellido :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="171.0" text="Segundo Apellido :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="333.0" layoutY="171.0" text="Email :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="346.0" layoutY="47.0" text="DNI : " textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bNombre" layoutX="144.0" layoutY="43.0" />
+            <TextField fx:id="bApellido1" layoutX="144.0" layoutY="107.0" />
+            <TextField fx:id="bApellido2" layoutX="144.0" layoutY="167.0" />
+            <TextField fx:id="bEmail" layoutX="387.0" layoutY="167.0" />
+            <TextField fx:id="bDni" layoutX="387.0" layoutY="43.0" onKeyPressed="#keyPressed" />
+            <Button fx:id="botonConfirmar" defaultButton="true" layoutX="387.0" layoutY="286.0" mnemonicParsing="false" onAction="#pulsarConfirmar" prefHeight="26.0" prefWidth="150.0" text="Confirmar Cambios" textFill="#150101" />
+            <Label layoutX="352.0" layoutY="111.0" text="ID :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bId" layoutX="387.0" layoutY="107.0" onKeyPressed="#keyPressed" />
+            <ListView fx:id="listView" editable="true" layoutX="28.0" layoutY="368.0" onKeyPressed="#rellenar" prefHeight="203.0" prefWidth="635.0" />
+            <Button fx:id="seleccion" layoutX="304.0" layoutY="595.0" mnemonicParsing="false" onAction="#clickSeleccionar" prefHeight="26.0" prefWidth="82.0" text="Seleccionar" />
+            <Label layoutX="38.0" layoutY="228.0" text="Teléfono Móvil :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bTelefono" layoutX="144.0" layoutY="224.0" />
+            <Label fx:id="labelEditarZona" layoutX="98.0" layoutY="290.0" text="Zona :" textFill="#e8e6e6">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="328.0" layoutY="228.0" text="Asiento :" textFill="#ece9e9">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboEditarZona" layoutX="144.0" layoutY="287.0" onAction="#clickComboZona" onShowing="#showZona" prefWidth="150.0" promptText="Zona asignada" />
+            <ComboBox fx:id="comboEditarAsiento" layoutX="387.0" layoutY="224.0" onAction="#clickComboAsiento" onShowing="#showAsiento" prefWidth="150.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

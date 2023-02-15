@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreal.ControladorAbonos">
+   <top>
+      <Button fx:id="buttonNorte" mnemonicParsing="false" onAction="#clickNorte" prefHeight="88.0" prefWidth="804.0" text="Zona Norte del Campo" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </top>
+   <left>
+      <Button fx:id="buttonOeste" mnemonicParsing="false" onAction="#clickOeste" prefHeight="363.0" prefWidth="116.0" text="Oeste" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </left>
+   <bottom>
+      <Button fx:id="buttonSur" mnemonicParsing="false" onAction="#clickSur" prefHeight="88.0" prefWidth="804.0" text="Zona Sur del Campo" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </bottom>
+   <right>
+      <Button fx:id="buttonEste" mnemonicParsing="false" onAction="#clickEste" prefHeight="363.0" prefWidth="103.0" text="Este" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+   </right>
+   <center>
+      <ImageView fitHeight="365.0" fitWidth="589.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@futbol.jpg" />
+         </image>
+      </ImageView>
+   </center>
+</BorderPane>

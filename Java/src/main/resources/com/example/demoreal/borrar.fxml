@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.3163073058404856" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreal.ControladorBorrar">
+  <items>
+    <AnchorPane id="pane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@style.css">
+         <children>
+            <Button id="buscarBorrar" fx:id="buscarBorrar" layoutX="101.0" layoutY="229.0" mnemonicParsing="false" onAction="#clickBuscarBorrar" prefHeight="26.0" prefWidth="82.0" text="BuscarSocio" />
+            <TextField fx:id="txtBusqueda" layoutX="68.0" layoutY="181.0" promptText="DNI" />
+            <Button fx:id="atrasBorrar" layoutX="106.0" layoutY="389.0" mnemonicParsing="false" onAction="#clickAtrasBorrar" prefHeight="26.0" prefWidth="72.0" text="Atrás" />
+            <Label fx:id="labelBorrar" layoutX="131.0" layoutY="145.0" text="DNI" textFill="#efe6e6">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="27.0" text="Elija un campo para buscar" textFill="#e7e1e1">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBorrar" layoutX="66.0" layoutY="58.0" onAction="#clickComboBorrar" onShowing="#showBorrar" prefWidth="150.0" promptText="Seleccione campo" />
+         </children></AnchorPane>
+    <AnchorPane id="pane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@style.css">
+         <children>
+            <ListView id="listViewBorrar" fx:id="listViewBorrar" editable="true" layoutX="30.0" layoutY="30.0" prefHeight="320.0" prefWidth="559.0" />
+            <Button fx:id="eliminar" defaultButton="true" layoutX="30.0" layoutY="388.0" mnemonicParsing="false" onAction="#clickEliminar" prefHeight="26.0" prefWidth="82.0" text="Eliminar" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

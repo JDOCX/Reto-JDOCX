@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="pane" prefHeight="224.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreal.ControladorLostPasswd">
+   <children>
+      <Label layoutX="205.0" layoutY="45.0" text="Ingrese el código" textFill="#efeeee">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="c1" layoutX="181.0" layoutY="99.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField fx:id="c2" layoutX="220.0" layoutY="99.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField fx:id="c3" layoutX="260.0" layoutY="99.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField fx:id="c4" layoutX="299.0" layoutY="99.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField fx:id="c5" layoutX="337.0" layoutY="99.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField fx:id="c6" layoutX="376.0" layoutY="99.0" prefHeight="26.0" prefWidth="30.0" />
+      <Button fx:id="aceptarMail2" layoutX="266.0" layoutY="161.0" mnemonicParsing="false" onAction="#onClick2" prefHeight="26.0" prefWidth="68.0" text="Aceptar" />
+   </children>
+</AnchorPane>
