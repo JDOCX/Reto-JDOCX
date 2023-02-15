@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="socios" type="sociosType"></xs:element>
+    <xs:complexType name="sociosType">
+        <xs:sequence>
+            <xs:element name="socio" type="socioTipo" maxOccurs="unbounded" minOccurs="1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="socioTipo">
+        <xs:sequence>
+            <xs:element name="dni" type="xs:string"></xs:element>
+            <xs:element name="primerApellido" type="xs:string"></xs:element>
+            <xs:element name="segundoApellido" type="xs:string"></xs:element>
+            <xs:element name="correo" type="correoType"></xs:element>
+            <xs:element name="fechaNacimiento" type="xs:date"></xs:element>
+        </xs:sequence>    
+            <xs:attribute name="id" type="xs:integer"></xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="correoType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^\.]+\..+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
