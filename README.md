@@ -1,7 +1,7 @@
 # Manual de Uso
 Para el manejo de la aplicación de gestión de socios de nuestro Club JDOCX se deberán seguir los siguientes pasos:
 
-1) Para ejecutar la aplicación se debe entrar en la carpeta out / artifacts / demoReal_jar y ejecutar el fichero GestiónSocios.bat.
+1) Para ejecutar la aplicación se debe entrar en la carpeta Java / out / artifacts / demoReal_jar y ejecutar el fichero GestiónSocios.bat.
 
 ![](/Fotos%20Manual%20de%20Usuario/img1.png)
 2) Iniciar sesión con sus credenciales de acceso.
