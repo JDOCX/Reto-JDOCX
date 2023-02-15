@@ -1,0 +1,375 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'arial';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+h1{
+    font-size: 26px;
+}
+h2{
+    font-size: 20px;
+}
+h3{
+    font-size: 18px;
+}
+h4{
+    font-size: 16px;
+}
+h5{
+    font-size: 14px;
+}
+h6{
+    font-size: 12px;
+}
+p{
+    font-family: 'arial';
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 20px;
+}
+a{
+    text-decoration: none;
+    font-family: arial;
+    letter-spacing: 1px;
+}
+span {
+    font-family: 'GothamBook';
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
+header{
+    position: fixed;
+    width: 100%;
+     
+
+
+}
+.header{
+    color: #FFF;
+    background: black;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+
+
+}
+.logo{
+    width: 20px;
+    height: 20px;
+  }
+.optionsBar{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.optionsBar span {
+    color: #FFF;
+    font-size: 11pt;
+    font-family: 'GothamBook';
+    text-transform: uppercase;
+    margin-left: 30px;
+}
+.photouser {
+    margin-left: 30px;
+    width: 25px;
+    height: 25px;
+}
+.close{
+    width: 25px;
+    height: 25px;
+}
+.optionsBar a {
+    display: flex;
+    margin-left: 30px;
+}
+
+
+/*NAV*/
+.nav2 {
+    color: #FFF;
+    background: black;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+
+nav {
+    width: 100%;
+    float: left;
+    background-color: black;
+  }
+  nav a{
+    color: white;
+  }
+  nav ul li {
+    float: right;
+    list-style-type: none;
+    text-align: left;
+   
+  }
+
+
+  nav a:link, a:visited, a:active {
+    text-decoration:none;
+}
+ 
+
+
+#container{
+    padding: 90px 15px 15px;
+}
+/*BANER*/
+.headerr {
+    width: 100%;
+    padding:60px 0;
+    text-align: center;
+    background: #33cccc;
+    color: white;
+  }
+ 
+ 
+  .btn-bgstroke {
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 300;
+    margin-top: 30px;
+  }
+ 
+  .btn-bgstroke:hover {
+    background-color: white;
+    color: #33cccc;
+  }
+/*POLITICAS*/
+
+
+
+
+/*FOOTER*/
+   
+ 
+ 
+  #footer{
+    background: black;
+      padding: 3rem;
+      color: white;
+
+
+  }
+
+
+  .social-links h2{
+    padding-bottom: 15px;
+    font-size: 20px;
+      font-weight: 600;
+      color: white;
+  }
+  .social-links img{
+    padding-bottom: 25px;
+    width: 10%;
+  }
+  .social-icons{
+    display: flex;
+      gap: 3rem;
+    display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    color: white;
+  }
+  .social-icons a{
+    font-size: 18px;
+      box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+      padding: 0.4rem 1rem 0.4rem 1rem;
+      border-radius: 3px;
+    color: #82074a;
+    margin-right: 18px;
+    color: white;
+  }
+  .social-icons a:hover{
+    color: blue;
+  }
+  .social-icons a i{
+    box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+      padding: 0.4rem 1rem 0.4rem 1rem;
+      border-radius: 3px;
+      color: #82074a;
+    font-size: 16px;
+    margin-right: 12px;
+  }
+  li{
+    list-style: none;
+  }
+
+
+  .useful-link img{
+    padding-bottom: 15px;
+  }
+  .use-links{
+    line-height: 32px;
+  }
+  .use-links li i{
+    font-size: 14px;
+      padding-right: 8px;
+      color: #898989;
+  }
+  .use-links li a{
+    color: #303030;
+      font-size: 15px;
+      font-weight: 500;
+    color: white;
+  }
+  .use-links li a:hover{
+    color: #000;
+  }
+  .address h2{
+    padding-bottom: 15px;
+    font-size: 20px;
+      font-weight: 600;
+  }
+  .address img{
+    padding-bottom: 15px;
+  }
+  .address-links li a{
+    color: white;
+      font-size: 15px;
+      font-weight: 500;
+   
+  }
+  .address-links li i{
+    font-size: 16px;
+      padding-right: 8px;
+    color: #82074a;
+ 
+  }
+  .address-links li i:nth-child(1){
+    padding-top: 9px;
+  }
+  .address-links .address1{
+    font-weight: 500;
+      font-size: 15px;
+    display: flex;
+  }
+  .address-links{
+        line-height: 32px;
+      color: white;
+  }
+  .address-links a:hover{
+    color: blue;
+  }
+
+
+
+
+
+
+
+
+   
+/*****************************************************************/
+/**REGISTRO / LOGIN / INSCRIPCION SOCIO / CONTACTO**/
+.form_register{
+    width: 500px;
+    margin: auto;
+}
+.form_register h1{
+    color: #3c93b0;
+}
+hr{
+    border: 0;
+    background: #CCC;
+    height: 1px;
+    margin: 10px 0;
+    display: block;
+}
+form{
+    background: #FFF;
+    margin: auto;
+    padding: 20px, 50px;
+    border: 1px solid #d1d1d1;
+}
+label{
+    display: block;
+    font-size: 12pt;
+    font-family: 'GothamBook';
+    margin: 15px auto 5px auto;
+}
+input,select{
+    display: block;
+    width: 100%;
+    font-size: 11pt;
+    padding: 5px;
+    border: 1px solid #85929e;
+    border-radius: 5px;
+}
+.btn_save{
+    font-size: 12pt;
+    background: #12a4c6;
+    padding: 10px;
+    color: #FFF;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+    margin: 15px auto;
+}
+.btn_save2{
+    font-size: 12pt;
+    background: #12a4c6;
+    padding: 10px;
+    color: #FFF;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+    margin: 15px auto;
+}
+.alert{
+    width: 100%;
+    background: #66e07d66;
+}
+.alert2{
+    width: 100%;
+    background: #66e07d66;
+}
+.msg_error{
+    color: #e65656;
+}
+.msg_error2{
+    color: #e65656;
+}
+.msg_save{
+    color: #126e00;
+}
+.msg_save2{
+    color: #126e00;
+}
+.alert p{
+    padding: 10px;
+}
+.alert2 p{
+    padding: 10px;
+}
+/********************************************************************************/
+
+
+
