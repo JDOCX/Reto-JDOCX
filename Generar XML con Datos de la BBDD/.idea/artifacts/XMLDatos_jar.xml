@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="XMLDatos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/XMLDatos_jar</output-path>
+    <root id="archive" name="XMLDatos.jar">
+      <element id="module-output" name="XMLDatos" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/MySqlJdbcDriver(1)/mysql-connector-j-8.0.31.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+    </root>
+  </artifact>
+</component>

@@ -59,7 +59,7 @@ public class ControladorEditar {
             String nombre = null;
             String primerApellido = null;
             String segundoApellido = null;
-            switch (campo){
+            switch (campo){ //Dependiendo del campo seleccionado en el filtro ejecutamos la query
                 case "dni":
                     try {
                         Conexion con = new Conexion();
@@ -72,6 +72,7 @@ public class ControladorEditar {
                             primerApellido = rs.getString("primerApellido");
                             segundoApellido = rs.getString("segundoApellido");
 
+                            //Agregamos el resultado devuelto por la query a la ListView
                             listView.getItems().add(nombre + " " + primerApellido + " " + segundoApellido + " DNI -> " + dni);
 
                         }
@@ -212,10 +213,11 @@ public class ControladorEditar {
                 Conexion con = new Conexion();
                 Statement statement = con.conexion().createStatement();
                 ResultSet rs = statement.executeQuery("select dni from socios");
+                //Guardamos todos los dniS existentes en la base de datos en el ArrayList (dniS)
                 while (rs.next()) {
                     dniS.add(rs.getString("dni"));
                 }
-
+                //Comprobamos que el dni introducido no se encuentra en la base de datos (evita que se repitan dniS)
                 for (int i = 0; i < dniS.size(); i++) {
                     if (dniS.get(i).equals(bDni.getText())) {
                         dniRepetido = true;

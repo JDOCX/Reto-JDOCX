@@ -27,16 +27,16 @@ public class ControladorBorrar {
     public ComboBox<String> comboBorrar;
     public String campo;
     public String idUsuario;
-    public static String nombreSocioBorrar;
+
 
     public void clickBuscarBorrar(ActionEvent event) {
-        if (event.getSource() == buscarBorrar) { //Si el resultado que devuelve la query está vacío realizar un ALERT
+        if (event.getSource() == buscarBorrar) {
             try{
             String dni = null;
             String nombre = null;
             String primerApellido = null;
             String segundoApellido = null;
-            switch (campo){
+            switch (campo){ //Según el campo seleccionado en el filtro realizaremos la query a la base de datos
                 case "dni":
                     try {
                         Conexion con = new Conexion();
@@ -175,8 +175,9 @@ public class ControladorBorrar {
                 String dni = null;
 
                 if (listViewBorrar.getEditingIndex() == -1) {
-
+                    //Si no hay nada seleccionado
                 } else {
+
                     lista = listViewBorrar.getItems().get(listViewBorrar.getEditingIndex()); //Toma el elemento en el indice que se ha pulsado doble click sobre el.
                 }
 
@@ -211,22 +212,9 @@ public class ControladorBorrar {
         }
     }
 
-    public static void alertWarning(String message){
-        Alert mensaje = new Alert(Alert.AlertType.WARNING);
-        mensaje.setTitle("Aviso");
-        mensaje.setContentText(message);
-        mensaje.showAndWait();
-    }
-
-    public static void alertInfo(String message){
-        Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
-        mensaje.setTitle("Información");
-        mensaje.setContentText(message);
-        mensaje.showAndWait();
-    }
-
     public void clickComboBorrar(ActionEvent event) {
         try {
+            //Guardamos en la variable campo el valor del flitro seleccionado para realizar la query
             if (comboBorrar.getSelectionModel().getSelectedItem().equals("DNI")) {
                 labelBorrar.setText("DNI");
                 txtBusqueda.setPromptText("DNI");
@@ -267,6 +255,20 @@ public class ControladorBorrar {
         Optional<ButtonType> action = alert.showAndWait();
         
         return action;
+    }
+
+    public static void alertWarning(String message){
+        Alert mensaje = new Alert(Alert.AlertType.WARNING);
+        mensaje.setTitle("Aviso");
+        mensaje.setContentText(message);
+        mensaje.showAndWait();
+    }
+
+    public static void alertInfo(String message){
+        Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+        mensaje.setTitle("Información");
+        mensaje.setContentText(message);
+        mensaje.showAndWait();
     }
 }
 

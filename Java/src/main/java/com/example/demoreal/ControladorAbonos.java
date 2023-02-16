@@ -215,26 +215,12 @@ public class ControladorAbonos {
             }
         }
     }
-
-    public static void alertWarning(String message){
-        Alert mensaje = new Alert(Alert.AlertType.WARNING);
-        mensaje.setTitle("Aviso");
-        mensaje.setContentText(message);
-        mensaje.showAndWait();
-    }
-
-    public static void alertInfo(String message){
-        Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
-        mensaje.setTitle("Información");
-        mensaje.setContentText(message);
-        mensaje.showAndWait();
-    }
-
     public void onSelectAsiento(ActionEvent event) {
         txtAsiento.setText(String.valueOf(comboAsiento.getSelectionModel().getSelectedItem()));
     }
 
     public void showAsientos(Event event) {
+        //Mostramos los asiento en el ComboBox
         ObservableList<Integer> items = FXCollections.observableArrayList();
         items.addAll(asientosLibres);
         comboAsiento.setItems(items);
@@ -245,7 +231,7 @@ public class ControladorAbonos {
           asientoElegido = Integer.parseInt(txtAsiento.getText());
 
           if(zona.equals("Norte")){
-              //Insertamos los datos en la tabla de abonoNorte siendo la que corresponde
+              //Insertamos los datos en la tabla de abonos con el id de zona Norte
               int idZona = 0;
               try{
                   Conexion con = new Conexion();
@@ -307,7 +293,7 @@ public class ControladorAbonos {
           }
           if(zona.equals("Oeste")){
               int idZona = 0;
-              //Insertamos los datos en la tabla de abonoOeste siendo la que corresponde
+              //Insertamos los datos en la tabla de abonos con el id de zona Oeste
               try{
                   Conexion con = new Conexion();
                   //Sacamos la edad para saber a que categoría pertenece
@@ -365,7 +351,7 @@ public class ControladorAbonos {
           }
           if(zona.equals("Sur")){
               int idZona = 0;
-              //Insertamos los datos en la tabla de abonoSur siendo la que corresponde
+              //Insertamos los datos en la tabla de abonos con el id de zona Sur
               try{
                   Conexion con = new Conexion();
                   //Sacamos la edad para saber a que categoría pertenece
@@ -424,7 +410,7 @@ public class ControladorAbonos {
         }
         if(zona.equals("Este")){
             int idZona = 0;
-            //Insertamos los datos en la tabla de abonoEste siendo la que corresponde
+            //Insertamos los datos en la tabla de abonos con el id de zona Este
             try{
                 Conexion con = new Conexion();
                 //Sacamos la edad para saber a que categoría pertenece
@@ -518,6 +504,20 @@ public class ControladorAbonos {
             alertWarning("Se ha producido un error");
         }
         return idSocio;
+    }
+
+    public static void alertWarning(String message){
+        Alert mensaje = new Alert(Alert.AlertType.WARNING);
+        mensaje.setTitle("Aviso");
+        mensaje.setContentText(message);
+        mensaje.showAndWait();
+    }
+
+    public static void alertInfo(String message){
+        Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+        mensaje.setTitle("Información");
+        mensaje.setContentText(message);
+        mensaje.showAndWait();
     }
 
 }
