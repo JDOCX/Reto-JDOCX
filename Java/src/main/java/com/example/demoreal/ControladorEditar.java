@@ -59,7 +59,7 @@ public class ControladorEditar {
             String nombre = null;
             String primerApellido = null;
             String segundoApellido = null;
-            switch (campo){ //Dependiendo del campo seleccionado en el filtro ejecutamos la query
+            switch (campo){ //Dependiendo del campo seleccionado en el filtro ejecutamos la query a la BBDD
                 case "dni":
                     try {
                         Conexion con = new Conexion();

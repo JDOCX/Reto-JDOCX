@@ -214,7 +214,7 @@ public class ControladorBorrar {
 
     public void clickComboBorrar(ActionEvent event) {
         try {
-            //Guardamos en la variable campo el valor del flitro seleccionado para realizar la query
+            //Guardamos en la variable campo el valor del flitro seleccionado para realizar la query a la BBDD
             if (comboBorrar.getSelectionModel().getSelectedItem().equals("DNI")) {
                 labelBorrar.setText("DNI");
                 txtBusqueda.setPromptText("DNI");

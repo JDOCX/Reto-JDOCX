@@ -73,6 +73,7 @@ public class ControladorAbonos {
                 stage.setScene(scene);
                 stage.showAndWait();
 
+
                 sitSel = true;
                 Stage stage1 = (Stage) this.buttonNorte.getScene().getWindow();
                 stage1.close();
@@ -220,7 +221,7 @@ public class ControladorAbonos {
     }
 
     public void showAsientos(Event event) {
-        //Mostramos los asiento en el ComboBox
+        //Mostramos los asiento en el ComboBox de la ventana
         ObservableList<Integer> items = FXCollections.observableArrayList();
         items.addAll(asientosLibres);
         comboAsiento.setItems(items);
