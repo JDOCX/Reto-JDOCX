@@ -8,15 +8,21 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javax.mail.MessagingException;
 import javax.swing.*;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import static com.example.demoreal.ControladorAbonos.*;
 
 public class ControladorGestionNormalUser {
     public Button busqueda;
@@ -45,8 +51,9 @@ public class ControladorGestionNormalUser {
         stage.show();
     }
 
-    public void agregarSocio(ActionEvent event) { //Arreglar ahora tiene mas campos
+    public void agregarSocio(ActionEvent event) throws IOException { //Arreglar ahora tiene mas campos
         if(event.getSource() == addUser){ //Fix if textFields are Empty
+            String passwd = null;
             boolean altaRealizada = false;
             String dni = "";
             int idUser = 0;
@@ -78,12 +85,11 @@ public class ControladorGestionNormalUser {
                 if(validarDni(txtDni.getText())&&(!txtNombre.getText().equals("")&&(!txtApellido1.getText().equals("")&&(!txtApellido2.getText().equals("")&&(!txtDni.getText().equals("")&&(!txtFecha.getText().equals("")&&(!txtEmail.getText().equals("")&&(!dniRepetido)))))))) {
                     String telefono;
                     String email;
-                    if(txtTelefono.getText().equals("")){
-                        telefono = "null";
-                    }else {
-                        telefono = txtTelefono.getText();
-                    }
-                    int update = statement.executeUpdate("INSERT INTO socios (dni, nombre, primerApellido, segundoApellido, correo, contrasena, fechaNacimiento, telefono, idUsuario) VALUES ('" + txtDni.getText() + "','" + txtNombre.getText() + "','" + txtApellido1.getText() + "','" + txtApellido2.getText() + "','" + txtEmail.getText() + "','" + generarContrasena() + "','" + txtFecha.getText() + "','" + telefono + "','" + idUser + "');");
+
+                    telefono = txtTelefono.getText();
+                    passwd = generarContrasena();
+                    fechaNacimiento = txtFecha.getText();
+                    int update = statement.executeUpdate("INSERT INTO socios (dni, nombre, primerApellido, segundoApellido, correo, contrasena, fechaNacimiento, telefono, idUsuario) VALUES ('" + txtDni.getText() + "','" + txtNombre.getText() + "','" + txtApellido1.getText() + "','" + txtApellido2.getText() + "','" + txtEmail.getText() + "','" + getMD5(passwd) + "','" + txtFecha.getText() + "','" + telefono + "','" + idUser + "');");
                     dni = txtDni.getText();
                     email = txtEmail.getText();
                     int update2 = statement.executeUpdate("UPDATE usuariosWeb SET esSocio = true where correo = '" + email + "';");
@@ -93,13 +99,28 @@ public class ControladorGestionNormalUser {
                     JOptionPane.showMessageDialog(null, "Asegúrese de no haber dejado ningún campo requerido en blanco, haber colocado correctamente el DNI, o que no este registrado anteriormente.", "Aviso", 1);
                     altaRealizada = false;
                 }
-            }catch (IndexOutOfBoundsException | SQLException ex){
-                JOptionPane.showMessageDialog(null, "Rellene los campos que están vacíos");
+            }catch (IndexOutOfBoundsException | SQLException | NoSuchAlgorithmException ex){
+                alertWarning("Asegúrese de estar registrado en nuestra web con el mismo email o de tener todos los campos obligatorios rellenos");
             };
+            //Cargamos ventana de selección de zona y asiento
+            if(altaRealizada) {
+                FXMLLoader fxmlLoader = new FXMLLoader(GestionSocios.class.getResource("abono.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 804, 539);
+                Stage stage = new Stage();
+                stage.getIcons().add(new Image("C:\\Users\\Diego\\IdeaProjects\\demoReal\\src\\main\\resources\\com\\example\\demoreal\\coding.png"));
+                stage.setTitle("Gestion de Socios");
+                stage.setResizable(false);
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.showAndWait();
+            }else {
+
+            }
+
 
             //Enviar Mail de Alta
             boolean mailEnviado = false;
-            if(altaRealizada) {
+            if(altaRealizada && sitSel) {
                 alertInfo("Dado de alta satisfactoriamente");
                 try{
                     Conexion con = new Conexion();
@@ -111,15 +132,16 @@ public class ControladorGestionNormalUser {
                         primerApellido = rs.getString("primerApellido");
                         segundoApellido = rs.getString("segundoApellido");
                         fechaNacimiento = rs.getString("fechaNacimiento") ;
-                        contrasena = rs.getString("contrasena");
+                        contrasena = passwd;
                     }
                     Mailto mail = new Mailto("config/configuracion.prop");
-                    mail.enviarEmail("Equipo de JDOCX", "ID: " + id + "\nNombre: " + nombre + "\nPrimer Apellido: " + primerApellido + "\nSegundo Apellido: " + segundoApellido + "\nFecha de Nacimiento: " + fechaNacimiento + "\nA continuación verá la contraseña que se le ha asignado por defecto por favor asegúrese de cambiarla por su seguridad.\nContraseña: " + contrasena, txtEmail.getText());
+                    mail.enviarEmail("Equipo de JDOCX", "ID: " + id + "\nNombre: " + nombre + "\nPrimer Apellido: " + primerApellido + "\nSegundo Apellido: " + segundoApellido + "\nFecha de Nacimiento: " + fechaNacimiento + "\nA continuación verá la contraseña que se le ha asignado por defecto por favor asegúrese de cambiarla por su seguridad.\nContraseña: " + contrasena + "\nZona: " + zona + "\nAsiento: " + asientoElegido, txtEmail.getText());
                     con.closeConnection();
                     mailEnviado = true;
                 }catch(Exception ex){
                     ex.printStackTrace();
                 }
+
             }
             if(mailEnviado){
                 txtNombre.setText("");
@@ -130,6 +152,7 @@ public class ControladorGestionNormalUser {
                 txtEmail.setText("");
                 txtTelefono.setText("");
             }
+
         }
     }
 
@@ -199,6 +222,23 @@ public class ControladorGestionNormalUser {
 
         numero = sb.toString();
         return numero;
+    }
+
+    public static String getMD5(String input) throws NoSuchAlgorithmException {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

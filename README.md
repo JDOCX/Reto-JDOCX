@@ -61,7 +61,7 @@ En esta debe ingresar el código recibido en su correo electrónico y así conti
 
 - Excepción al presionar el botón de *Confirmar* y los campos estan vacíos, dice que los que cambios se han realizado con exito aunque no se hayan realizado.  //Resuelto
 
-- Exception al buscar con los campos vacíos //Resuelto
+- Excepción al buscar con los campos vacíos //Resuelto
 
 - Teléfono no lo inserta en la base de Datos //Resuelto
 
